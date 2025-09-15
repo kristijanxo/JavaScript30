@@ -100,6 +100,12 @@
       console.log(`Inventors accumulated life years: ${inventorsLivedYears}`);
 
       // 5. Sort the inventors by years lived
+      const inventorsSortedYearsLived = inventors.sort((a, b) => {
+        const aLived = a.passed - a.year;
+        const bLived = b.passed - b.year;
+        return bLived - aLived;
+      });
+      console.table(inventorsSortedYearsLived);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
